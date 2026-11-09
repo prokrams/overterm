@@ -1,0 +1,16 @@
+{
+  "name": "llmswitcher",
+  "version": "1.0.0",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.ts",
+    "test": "node src/tests/index.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}
