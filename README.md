@@ -4,7 +4,7 @@
   <br><br>
 </h1>
 
-Terminal timer with completed work
+Terminal timer with tracking of completed work
 
 ## args
 
