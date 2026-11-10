@@ -1,4 +1,3 @@
-import render from './render/render.ts'
 import { exec } from 'node:child_process'
 import { getAllSeconds, timeConverter } from './render/convertion.ts'
 import { argsMessage } from './utils/args.ts'
@@ -13,7 +12,7 @@ function setTimer(message: string) {
         timeConverter(i)
         if (i <= 1) {
             if (message) console.log(message)
-            exec('say "BIP BIP TIME IS OVER HAHAHA"')
+            exec('say "BIP BIP"')
         }
         i -= 1
     }, 1000)

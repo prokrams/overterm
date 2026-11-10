@@ -1,28 +1,30 @@
 {
     "compilerOptions": {
-        "target": "esnext",
+        "target": "es2022",
         "module": "nodenext",
         "types": ["node"],
+        "strict": true,
         "newLine": "LF",
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
         "allowImportingTsExtensions": true,
+        "rewriteRelativeImportExtensions": true,
+        "erasableSyntaxOnly": true,
+        "verbatimModuleSyntax": true,
         "noEmit": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
-        "strictBindCallApply": true,
-        "strictNullChecks": true,
-        "strictPropertyInitialization": true,
         "stripInternal": true,
         "typeRoots": [
             "node_modules/@types",
             "src/typings"
-        ]
+        ],
+        "rootDir": "src",
+        "outDir": "dist",
+        "declaration": true,
+        "skipLibCheck": true
     },
     "include": [
         "src/**/*.ts"
-    ],
-    "exclude": [
-        "node_modules"
     ]
 }

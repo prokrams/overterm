@@ -1,11 +1,20 @@
 {
   "name": "llmswitcher",
+  "private": "true",
   "version": "1.0.0",
   "license": "ISC",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.ts"
+    }
+  },
   "type": "module",
+  "files": ["dist"],
   "scripts": {
     "start": "node src/index.ts",
-    "test": "node src/tests/index.test.ts"
+    "test": "node src/tests/index.test.ts",
+    "build": "npx tsc -p tsconfig.build.json"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
