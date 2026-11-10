@@ -1,7 +1,7 @@
 const columns = process.stdout.columns
 
 function splitString(text: string) {
-    if (text.length < columns) return { size: text.length, refinedText: [text] }
+    if (text.length < columns) return [text]
     let middle = Math.floor(text.length / 2)
     for (let i = 0; i < text.length; i++) {
         if (text[middle + i] === ' ') {
@@ -13,11 +13,16 @@ function splitString(text: string) {
     let seconds = text.slice(middle)
     seconds[0] === ' ' ? seconds = seconds.trimStart() : seconds
 
-    return { refinedText: [first, seconds] }
+    return [first, seconds]
 }
 
-export function horizontalPaddings(text: string) {
-    const { refinedText } = splitString(text)
+function checkType(text: string | string[]) {
+    if (typeof text === 'string') return splitString(text)
+    return text
+}
+
+export function horizontalPaddings(text: string | string[]) {
+    const refinedText = checkType(text)
     console.log('')
     refinedText.forEach(item => {
         const withText = columns - item.length

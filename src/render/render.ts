@@ -2,7 +2,8 @@ import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
 import { argsTask } from '../utils/args.ts'
 import font from './font.ts'
 
-export default function render(time: string[]) {    
+export default function render(time: string[]) {
+    let result: string[] = []
     const objFont = font
     
     const symbols: string[][] = time.map((_, index) => {
@@ -13,7 +14,8 @@ export default function render(time: string[]) {
         const rows = symbols.map((columns) => {
             return columns[i]
         })
-        console.log(rows.join(''))
+        result.push(rows.join(''))
     }
+    horizontalPaddings(result)
     horizontalPaddings(argsTask)
 }

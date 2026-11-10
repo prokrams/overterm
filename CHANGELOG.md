@@ -2,6 +2,8 @@
 
 added paddings to a task
 
+time is now centered
+
 [ ] Relationship between the countdown and the attached description
 
 # v0.1 - 5kb
