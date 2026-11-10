@@ -17,17 +17,17 @@ const { values } = parseArgs({
             short: 'h',
             default: '0'
         },
-        message: {
+        task: {
             type: 'string',
-            short: 'm',
+            short: 't',
             default: ''
         }
     }
 })
 
-const { seconds, minutes, hours, message } = values
+const { seconds, minutes, hours, task } = values
 
 export const argsSeconds = Number(seconds)
 export const argsMinutes = Number(minutes)
 export const argsHours = Number(hours)
-export const argsMessage = message
+export const argsTask = task

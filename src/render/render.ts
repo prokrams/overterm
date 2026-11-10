@@ -1,6 +1,6 @@
-import { timeConverter } from './convertion.ts'
+import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
+import { argsTask } from '../utils/args.ts'
 import font from './font.ts'
-
 
 export default function render(time: string[]) {    
     const objFont = font
@@ -15,6 +15,5 @@ export default function render(time: string[]) {
         })
         console.log(rows.join(''))
     }
-
-    console.log(time)
+    horizontalPaddings(argsTask)
 }

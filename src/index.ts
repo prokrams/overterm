@@ -1,8 +1,7 @@
 import { exec } from 'node:child_process'
 import { getAllSeconds, timeConverter } from './render/convertion.ts'
-import { argsMessage } from './utils/args.ts'
 
-function setTimer(message: string) {
+function setTimer() {
     let i = getAllSeconds()
     const countdown = setInterval(() => {
         if (i <= 1) {
@@ -11,7 +10,6 @@ function setTimer(message: string) {
         console.clear()
         timeConverter(i)
         if (i <= 1) {
-            if (message) console.log(message)
             exec('say "BIP BIP"')
         }
         i -= 1
@@ -20,4 +18,4 @@ function setTimer(message: string) {
     countdown
 }
 
-setTimer(argsMessage)
+setTimer()
