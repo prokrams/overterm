@@ -9,6 +9,9 @@
       "default": "./dist/index.ts"
     }
   },
+  "bin": {
+    "overterm": "src/index.ts"
+  },
   "type": "module",
   "files": ["dist"],
   "scripts": {

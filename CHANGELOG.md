@@ -4,7 +4,13 @@ added paddings to a task
 
 time is now centered
 
-[ ] Relationship between the countdown and the attached description
+added checkbox "completed"
+
+test db (log)
+
+[X] Link the countdown to the attached description
+
+[X] Mark assigned tasks as "completed" when finished within the allotted time
 
 # v0.1 - 5kb
 
