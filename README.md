@@ -1,11 +1,12 @@
-<h1 align="center">
-  <br><br>
-  Overterm
-  <br><br>
-</h1>
-
-Terminal ASCII timer with tracking of completed work
-
+```
+                                           M""""""""M MM""""""""`M MM"""""""`MM M"""""`'"""`YM 
+                                           Mmmm  mmmM MM  mmmmmmmM MM  mmmm,  M M  mm.  mm.  M 
+       .d8888b. dP   .dP .d8888b. 88d888b. MMMM  MMMM M`      MMMM M'        .M M  MMM  MMM  M 
+       88'  `88 88   d8' 88ooood8 88'  `88 MMMM  MMMM MM  MMMMMMMM MM  MMMb. "M M  MMM  MMM  M 
+       88.  .88 88 .88'  88.  ... 88       MMMM  MMMM MM  MMMMMMMM MM  MMMMM  M M  MMM  MMM  M 
+       `88888P' 8888P'   `88888P' dP       MMMM  MMMM MM        .M MM  MMMMM  M M  MMM  MMM  M 
+                                           MMMMMMMMMM MMMMMMMMMMMM MMMMMMMMMMMM MMMMMMMMMMMMMM 
+```  
 ## args
 
 ## dev
