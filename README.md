@@ -4,7 +4,7 @@
   <br><br>
 </h1>
 
-Terminal timer with tracking of completed work
+Terminal ASCII timer with tracking of completed work
 
 ## args
 
@@ -16,13 +16,12 @@ Terminal timer with tracking of completed work
 
 [X] Graphical representation of the timer
 
-Relationship between the countdown and the attached description
+[ ] Link the countdown to the attached description
 
-"Completion" of assigned tasks within the allotted time
+[ ] Mark assigned tasks as "completed" when finished within the allotted time
 
-DB (json) where all timers and their signatures are stored; empty timers should not be saved in the DB
-Graph + graphical representation for a scrollable list of timers in a table
+[ ] JSON database for storing all timers and their descriptions empty timers should not be saved
 
-Timers to choose from among the most recently recorded timers
+[ ] Select timers from the most recently recorded timers
 
-[ ] Write a readme
+[ ] Write a README

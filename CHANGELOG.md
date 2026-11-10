@@ -1,3 +1,9 @@
+# v0.2 -
+
+added paddings to a task
+
+[ ] Relationship between the countdown and the attached description
+
 # v0.1 - 5kb
 
 basic functionality
