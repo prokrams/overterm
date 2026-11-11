@@ -20,9 +20,9 @@ Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**
 
 [X] Graphical representation of the timer
 
-[ ] Link the countdown to the attached description
+[X] Link the countdown to the attached description
 
-[ ] Mark assigned tasks as "completed" when finished within the allotted time
+[X] Mark assigned tasks as "completed" when finished within the allotted time
 
 [ ] JSON database for storing all timers and their descriptions empty timers should not be saved
 

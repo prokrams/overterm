@@ -6,7 +6,15 @@ time is now centered
 
 added checkbox "completed"
 
-test db (log)
+a DB for timers has been created; now you can view all previously launched timers using the **log** command.
+```
+overterm log
+```
+
+need fix output check. Navigate is broken for elements below 6
+need fix value for key "time" in timer.ts 
+
+### from roadmap
 
 [X] Link the countdown to the attached description
 
@@ -15,6 +23,8 @@ test db (log)
 # v0.1 - 5kb
 
 basic functionality
+
+### from roadmap
 
 [X] Countdown from the selected time
 

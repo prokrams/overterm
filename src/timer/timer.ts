@@ -1,6 +1,10 @@
+import { exec } from 'node:child_process'
 import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
 import rl from '../utils/input.ts'
-import { getAllSeconds, timeConverter } from './convertion.ts'
+import { getAllSeconds, timeConverter } from './render/convertion.ts'
+import writeLog from '../logs/write-log.ts'
+import { argsTask } from '../utils/args.ts'
+import now from '../utils/date.ts'
 
 export default function setTimer() {
     let i = getAllSeconds()
@@ -11,7 +15,7 @@ export default function setTimer() {
         console.clear()
         timeConverter(i)
         if (i <= 0) {
-            // exec('say "BIP BIP BIP BIP BIP"')
+            exec('say "BIP BIP BIP BIP BIP"')
             console.log('')
             rl.question(`Session success? (y/n): `, answer => {
                 let flag: boolean | undefined = undefined
@@ -21,6 +25,7 @@ export default function setTimer() {
                     flag = false
                 }
                 horizontalPaddings(`${flag ? 'Step by step...' : 'It will be finished next time'}\n`)
+                writeLog({ 'time': getAllSeconds().toString(), "task": argsTask, "success": flag, "date": now })
                 rl.close()
             })
         }

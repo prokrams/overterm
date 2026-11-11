@@ -1,4 +1,4 @@
-import { argsHours, argsMinutes, argsSeconds } from '../utils/args.ts'
+import { argsHours, argsMinutes, argsSeconds } from '../../utils/args.ts'
 import render from './render.ts'
 
 export function getAllSeconds() {
@@ -6,14 +6,10 @@ export function getAllSeconds() {
 }
 
 export function timeConverter(seconds: number) {
+    let result = []
     let finalSeconds: number = seconds
     let finalMinutes: number = Math.floor(finalSeconds / 60)
     let finalHours: number = Math.floor(finalMinutes / 60)
-    let result = []
-    
-    // --- DEBUG DEBUG DEBUG ---
-    console.log(`[time] ${finalSeconds} ${finalMinutes} ${finalHours}`)
-    // --- DEBUG DEBUG DEBUG ---
     
     if (finalSeconds >= 60) {
         finalSeconds = finalSeconds % 60

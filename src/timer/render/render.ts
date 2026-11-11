@@ -1,6 +1,6 @@
-import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
-import { argsTask } from '../utils/args.ts'
-import font from './font.ts'
+import { horizontalPaddings } from '../../tools/horizontal-paddings.ts'
+import { argsTask } from '../../utils/args.ts'
+import font from '../../assets/font.ts'
 
 export default function render(time: string[]) {
     let result: string[] = []
