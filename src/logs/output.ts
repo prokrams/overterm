@@ -1,11 +1,14 @@
 import readline from 'node:readline'
 import type { Log } from './types.ts'
-import getLogs from './get-logs.ts'
 import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
+import { logWorker } from './log-worker.ts'
+
+const logs = logWorker.getLogs()
 
 function renderLog(array: Log[]) {
     console.clear()
     horizontalPaddings('↑↓ navigate • ctrl+c quit')
+    horizontalPaddings(`timers found ${logs.length}`)
     array.map(({ time, task, success, date }) => {
         console.table(`\n ${time} \x1b[38;5;248m${date}\x1b[38;5;255m\n ${task}\n ${success ? '\x1b[38;5;10m' + success : '\x1b[38;5;9m' + success}\x1b[38;5;255m\n`)
     })
@@ -19,7 +22,6 @@ function close(sequence: string) {
 
 export default function output() {
 
-    const logs = getLogs()
     const points = { from: logs.length - 6, to: logs.length }
 
     renderLog(logs.slice(points.from, points.to))

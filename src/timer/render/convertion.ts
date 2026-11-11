@@ -5,7 +5,7 @@ export function getAllSeconds() {
     return argsSeconds + (argsMinutes * 60) + (argsHours * 3600)
 }
 
-export function timeConverter(seconds: number) {
+export function timeConverter(seconds: number): string[] {
     let result = []
     let finalSeconds: number = seconds
     let finalMinutes: number = Math.floor(finalSeconds / 60)
@@ -42,5 +42,9 @@ export function timeConverter(seconds: number) {
         result.push(digits)
     }
 
-    render(result.flat())
+    return result.flat()
+}
+
+export function renderConvertionTime(seconds: number) {
+    render(timeConverter(seconds))
 }

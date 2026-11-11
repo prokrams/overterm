@@ -28,6 +28,10 @@ Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**
 
 [ ] Select timers from the most recently recorded timers
 
+[ ] Add config
+
+[ ] Add pause
+
 [ ] Write a README
 
 ## Licence

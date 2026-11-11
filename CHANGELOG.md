@@ -1,4 +1,14 @@
-# v0.2 -
+# v0.3 - undefined
+
+added total number timers in **log**
+
+architecture optimization
+
+the question about **session success** no longer appears if no **task** is set.
+
+fix value for key "time" in timer.ts 
+
+# v0.2 - undefined
 
 added paddings to a task
 
