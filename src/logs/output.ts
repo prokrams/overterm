@@ -2,6 +2,8 @@ import readline from 'node:readline'
 import type { Log } from './types.ts'
 import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
 import { logWorker } from './log-worker.ts'
+import close from '../utils/close.ts'
+import { log } from 'node:console'
 
 const logs = logWorker.getLogs()
 
@@ -14,16 +16,11 @@ function renderLog(array: Log[]) {
     })
 }
 
-function close(sequence: string) {
-    if (sequence === '\x03') {
-        process.exit()
-    }
-}
-
 export default function output() {
 
     const points = { from: logs.length - 6, to: logs.length }
-
+    if (logs.length < 6) points.from = 0
+    
     renderLog(logs.slice(points.from, points.to))
 
     readline.emitKeypressEvents(process.stdin)
@@ -36,16 +33,13 @@ export default function output() {
         close(key.sequence)
         if (key.code === '[A') {
             if (points.from === 0) return
-            console.log(points)
             points.from -= 1
             points.to -= 1
-            console.log(points)
             renderLog(logs.slice(points.from, points.to))
         } else if (key.code === '[B') {
             if (points.to === logs.length) return
             points.from += 1
             points.to += 1
-            console.log(points)
             renderLog(logs.slice(points.from, points.to))
         }
 

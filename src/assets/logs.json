@@ -1,16 +1,3 @@
 {
-  "logs": [
-    {
-      "time": "00colon01",
-      "task": "test",
-      "success": false,
-      "date": "11/11/2026, 6:10:11 PM"
-    },
-    {
-      "time": "00:01",
-      "task": "test",
-      "success": false,
-      "date": "11/11/2026, 6:14:32 PM"
-    }
-  ]
+  "logs": []
 }

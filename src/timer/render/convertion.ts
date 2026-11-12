@@ -5,6 +5,10 @@ export function getAllSeconds() {
     return argsSeconds + (argsMinutes * 60) + (argsHours * 3600)
 }
 
+export function getAllMiliseconds() {
+    return (argsSeconds + (argsMinutes * 60) + (argsHours * 3600)) * 1000
+}
+
 export function timeConverter(seconds: number): string[] {
     let result = []
     let finalSeconds: number = seconds

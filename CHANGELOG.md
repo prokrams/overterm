@@ -1,4 +1,4 @@
-# v0.3 - undefined
+# v0.3 - 13kb
 
 added total number timers in **log**
 
@@ -7,6 +7,16 @@ architecture optimization
 the question about **session success** no longer appears if no **task** is set.
 
 fix value for key "time" in timer.ts 
+
+timer logic has been rewritten: it is now tied to Date.now()
+
+added pause logic to the timer on **space**
+
+additional control for the timer has been added: **q** abort program immediately, **enter** end the timer immediately
+
+### from roadmap
+
+[X] Add pause
 
 # v0.2 - undefined
 

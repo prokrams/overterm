@@ -1,5 +1,4 @@
-const date = new Date()
-
-const now = date.toLocaleString()
-
-export default now
+export function localeDate() {
+    const date = new Date()
+    return date.toLocaleString()
+}

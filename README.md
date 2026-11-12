@@ -24,13 +24,13 @@ Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**
 
 [X] Mark assigned tasks as "completed" when finished within the allotted time
 
-[ ] JSON database for storing all timers and their descriptions empty timers should not be saved
+[X] JSON database for storing all timers and their descriptions empty timers should not be saved
 
 [ ] Select timers from the most recently recorded timers
 
 [ ] Add config
 
-[ ] Add pause
+[X] Add pause
 
 [ ] Write a README
 
