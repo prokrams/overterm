@@ -13,7 +13,6 @@ export default function question() {
             input: process.stdin,
             output: process.stdout
         })
-        console.log('work')
         rl.question(`Session success? (y/n): `, answer => {
             let flag: boolean | undefined = undefined
             if (answer === 'y' || answer === 'yes') {

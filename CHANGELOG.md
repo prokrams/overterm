@@ -1,3 +1,8 @@
+# v1
+
+refactoring the timer code to promises
+
+
 # v0.3 - 13kb
 
 added total number timers in **log**

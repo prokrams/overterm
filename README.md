@@ -32,6 +32,8 @@ Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**
 
 [X] Add pause
 
+[ ] Fix flickering terminal
+
 [ ] Write a README
 
 ## Licence
