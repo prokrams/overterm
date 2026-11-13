@@ -1,3 +1,13 @@
+# v0.3.2
+
+refactoring render horizontal-paddings
+
+added terminal width check: now the timer doesn't crash (negative number) after changing the window when the task or the timer doesn't fit new width
+
+test config and bell
+
+preparing package.json for publication
+
 # v0.3.1
 
 refactoring the timer code to promises

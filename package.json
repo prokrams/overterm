@@ -1,22 +1,18 @@
 {
-  "name": "llmswitcher",
   "private": "true",
+  "name": "overterm",
   "version": "1.0.0",
-  "license": "ISC",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.ts"
-    }
-  },
-  "bin": {
-    "overterm": "src/index.ts"
-  },
+  "description": "Terminal ASCII timer with tracking of completed work. Lightweight, ASCII, time.",
+  "license": "MIT",
   "type": "module",
+  "bin": {
+    "overterm": "./dist/index.ts"
+  },
   "files": ["dist"],
+  "engines": {"node": ">=20"},
+  "keywords": ["timer", "cli", "countdown", "ascii"],
   "scripts": {
     "start": "node src/index.ts",
-    "test": "node src/tests/index.test.ts",
     "build": "npx tsc -p tsconfig.build.json"
   },
   "devDependencies": {
