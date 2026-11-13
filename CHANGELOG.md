@@ -1,4 +1,4 @@
-# v1
+# v0.3.1
 
 refactoring the timer code to promises
 
