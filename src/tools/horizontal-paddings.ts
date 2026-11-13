@@ -2,7 +2,6 @@ let columns = process.stdout.columns
 
 process.stdout.on('resize', () => {
     columns = process.stdout.columns
-    console.log(columns)
 })
 
 function splitString(text: string) {
@@ -28,7 +27,7 @@ function checkType(text: string | string[]) {
 
 export function horizontalPaddings(text: string | string[]) {
     const refinedText = checkType(text)
-    console.log('')
+    process.stdout.write('\n')
     refinedText.forEach(item => {
         const withText = columns - item.length
         const needColumns = withText / 2 >= 0 ? withText / 2 : 0
