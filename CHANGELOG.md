@@ -1,4 +1,4 @@
-# v0.3.2
+# v0.4.0
 
 refactoring render horizontal-paddings
 
@@ -7,6 +7,8 @@ added terminal width check: now the timer doesn't crash (negative number) after 
 test config and bell
 
 preparing package.json for publication
+
+additional args added: version, help
 
 # v0.3.1
 

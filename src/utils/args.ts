@@ -1,8 +1,15 @@
 import { parseArgs } from 'node:util'
 
-const { values, positionals } = parseArgs({
+export const { values, positionals } = parseArgs({
     allowPositionals: true,
     options: {
+        help: {
+            type: 'boolean'
+        },
+        version: {
+            type: 'boolean',
+            short: 'v'
+        },
         config: {
             type: 'boolean'
         },
@@ -32,11 +39,8 @@ const { values, positionals } = parseArgs({
     }
 })
 
-export const pos = positionals
-const { config, log, seconds, minutes, hours, task } = values
+const { seconds, minutes, hours, task } = values
 
-export const argsConfig = config
-export const argsLog = log
 export const argsSeconds = Number(seconds)
 export const argsMinutes = Number(minutes)
 export const argsHours = Number(hours)

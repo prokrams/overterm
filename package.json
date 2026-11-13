@@ -1,7 +1,7 @@
 {
   "private": "true",
-  "name": "overterm",
-  "version": "1.0.0",
+  "name": "Overterm",
+  "version": "0.4.0",
   "description": "Terminal ASCII timer with tracking of completed work. Lightweight, ASCII, time.",
   "license": "MIT",
   "type": "module",
