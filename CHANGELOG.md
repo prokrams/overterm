@@ -1,4 +1,4 @@
-# v0.4.0
+# v0.4.0 - 22.5kb
 
 refactoring render horizontal-paddings
 
@@ -8,7 +8,15 @@ test config and bell
 
 preparing package.json for publication
 
-additional args added: version, help
+additional args added: **version**, **help**
+
+the logs logic has been updated: they are now located in the user folder
+
+the hours flag has been changed to **H**
+
+added a check for the validity of number in **args**
+
+fixed bin path in package.json
 
 # v0.3.1
 
