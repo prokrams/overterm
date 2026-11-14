@@ -3,15 +3,19 @@ import type { Log } from './types.ts'
 import paths from '../utils/paths.ts'
 import validateData from '../utils/validate-data.ts'
 
-const filePath = paths.getLogs
-const data = validateData(filePath, { logs: [] })
+export default function logWorker() {
+    const filePath = paths.getLogs
+    const data = validateData(filePath, { logs: [] })
+    const parsedData = JSON.parse(data)
 
-const parsedData = JSON.parse(data)
-
-export const logWorker = {
-    write: (obj: Log) => {
+    function write(obj: Log) {
         parsedData.logs.push(obj)
         fs.writeFileSync(filePath, JSON.stringify(parsedData, null, 2))
-    },
-    get: () => { return parsedData.logs }
+    }
+
+    function get() {
+        return parsedData.logs
+    }
+
+    return { write, get }
 }

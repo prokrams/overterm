@@ -15,13 +15,22 @@ const default_config = {
     font_WIP: ''
 }
 
-const filePath = paths.getConfig
-const data = validateData(filePath, default_config)
+let cacheConfig: Config | undefined
 
-const pardedData = JSON.parse(data)
-
-const configWorker = {
-    get: () => { return pardedData as Config }
+function getConfig() {
+    console.log('___CONFIG READ___')
+    const filePath = paths.getConfig
+    const data = validateData(filePath, default_config)
+    return JSON.parse(data) as Config
 }
 
-export default configWorker
+function cache() {
+    if (!cacheConfig) cacheConfig = getConfig()
+    return cacheConfig
+}
+
+export default function configWorker() {
+    cache()
+    if (!cacheConfig) throw new Error('[CONFIG] config error')
+    return cacheConfig
+}

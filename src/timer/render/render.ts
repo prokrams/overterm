@@ -3,10 +3,12 @@ import { argsTask } from '../../utils/args.ts'
 import font from '../../assets/font.ts'
 import configWorker from '../../config/config-worker.ts'
 
-const config = configWorker.get()
+function loadConfig() {
+    return configWorker()
+}
 
 export default function render(time: string[]) {
-    let result: string[] = []
+    const result: string[] = []
     const objFont = font
     
     const symbols: string[][] = time.map((_, index) => {
@@ -19,7 +21,7 @@ export default function render(time: string[]) {
         })
         result.push(rows.join(''))
     }
-    config.hint_in_timer && horizontalPaddings('space pause • enter end • q quit')
+    loadConfig().hint_in_timer && horizontalPaddings('space pause • enter end • q quit')
     horizontalPaddings(result)
     horizontalPaddings(argsTask)
 }

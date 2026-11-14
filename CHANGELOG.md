@@ -20,6 +20,8 @@ fixed bin path in package.json
 
 the config logic added: now located in the user folder
 
+scope has been during import
+
 # v0.3.1
 
 refactoring the timer code to promises

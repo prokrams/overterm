@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "module",
   "bin": {
-    "overterm": "dist/index.ts"
+    "overterm": "dist/index.js"
   },
   "files": ["dist"],
   "engines": {"node": ">=20"},

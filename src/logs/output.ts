@@ -1,28 +1,28 @@
 import readline from 'node:readline'
 import type { Log } from './types.ts'
 import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
-import { logWorker } from './log-worker.ts'
 import close from '../utils/close.ts'
-import configWorker from '../config/config-worker.ts'
+import configWorker, { type Config } from '../config/config-worker.ts'
+import logWorker from './log-worker.ts'
 
-const logs = logWorker.get()
-const config = configWorker.get()
-
-function renderLog(array: Log[]) {
+function renderLog(array: Log[], logs: Log[], config: Config) {
     console.clear()
     config.hint_in_log && horizontalPaddings('↑↓ navigate • q quit')
     horizontalPaddings(`timers found ${logs.length}`)
     array.map(({ time, task, success, date }) => {
-        console.log(`\n ${time} \x1b[38;5;248m${date}\x1b[38;5;255m\n ${task}\n ${success ? '\x1b[38;5;10m' + success : '\x1b[38;5;9m' + success}\x1b[38;5;255m\n`)
+        process.stdout.write(`\n ${time} \x1b[38;5;248m${date}\x1b[38;5;255m\n ${task}\n ${success ? '\x1b[38;5;10m' + success : '\x1b[38;5;9m' + success}\x1b[38;5;255m\n`)
     })
 }
 
 export default function output() {
+    const { get } = logWorker()
+    const logs = get()
+    const config = configWorker()
 
     const points = { from: logs.length - 6, to: logs.length }
     if (logs.length < 6) points.from = 0
     
-    renderLog(logs.slice(points.from, points.to))
+    renderLog(logs.slice(points.from, points.to), logs, config)
 
     readline.emitKeypressEvents(process.stdin)
 
@@ -36,12 +36,12 @@ export default function output() {
             if (points.from === 0) return
             points.from -= 1
             points.to -= 1
-            renderLog(logs.slice(points.from, points.to))
+            renderLog(logs.slice(points.from, points.to), logs, config)
         } else if (key.code === '[B') {
             if (points.to === logs.length) return
             points.from += 1
             points.to += 1
-            renderLog(logs.slice(points.from, points.to))
+            renderLog(logs.slice(points.from, points.to), logs, config)
         }
 
     })

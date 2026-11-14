@@ -2,11 +2,12 @@ import readline from 'node:readline'
 import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
 import { getAllSeconds, timeConverter } from './render/convertion.ts'
 import { argsTask } from '../utils/args.ts'
-import { logWorker } from '../logs/log-worker.ts'
 import { localeDate } from '../utils/date.ts'
-
+import logWorker from '../logs/log-worker.ts'
 
 export default function question() {
+    const { write } = logWorker()
+
     console.log('')
     if (argsTask) {
         const rl = readline.createInterface({
@@ -21,10 +22,10 @@ export default function question() {
                 flag = false
             }
             horizontalPaddings(`${flag ? 'Step by step...' : 'It will be finished next time'}\n`)
-            logWorker.write({
-                'time': timeConverter(getAllSeconds()).map(digit => digit === 'colon' ? ':' : digit).join(''), 
-                "task": argsTask, 
-                "success": flag, 
+            write({
+                'time': timeConverter(getAllSeconds()).map(digit => digit === 'colon' ? ':' : digit).join(''),
+                "task": argsTask,
+                "success": flag,
                 "date": localeDate()
             })
             rl.close()
