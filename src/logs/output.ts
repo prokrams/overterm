@@ -3,12 +3,14 @@ import type { Log } from './types.ts'
 import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
 import { logWorker } from './log-worker.ts'
 import close from '../utils/close.ts'
+import configWorker from '../config/config-worker.ts'
 
-const logs = logWorker.getLogs()
+const logs = logWorker.get()
+const config = configWorker.get()
 
 function renderLog(array: Log[]) {
     console.clear()
-    horizontalPaddings('↑↓ navigate • ctrl+c quit')
+    config.hint_in_log && horizontalPaddings('↑↓ navigate • q quit')
     horizontalPaddings(`timers found ${logs.length}`)
     array.map(({ time, task, success, date }) => {
         console.log(`\n ${time} \x1b[38;5;248m${date}\x1b[38;5;255m\n ${task}\n ${success ? '\x1b[38;5;10m' + success : '\x1b[38;5;9m' + success}\x1b[38;5;255m\n`)

@@ -14,14 +14,11 @@ export default function terminalListener(togglePause: () => void, stop: () => vo
     if (process.stdin.isTTY) process.stdin.setRawMode(true)
 
     const handleKeypress = (_: string | undefined, key: readline.Key) => {
-        if (key.sequence) close(key.sequence)
+        if (key.sequence) close(key.sequence, unsubscriber)
         if (key.sequence === ' ') {
             togglePause()
         } else if (key.sequence === '\r') {
             stop()
-        } else if (key.sequence === 'q') {
-            unsubscriber()
-            process.exit(0)
         }
     }
 

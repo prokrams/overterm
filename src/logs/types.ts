@@ -4,3 +4,7 @@ export type Log = {
     task: string
     success: boolean
 }
+
+export type Logs = {
+    logs: Log[]
+}

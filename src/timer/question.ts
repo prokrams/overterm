@@ -21,7 +21,7 @@ export default function question() {
                 flag = false
             }
             horizontalPaddings(`${flag ? 'Step by step...' : 'It will be finished next time'}\n`)
-            logWorker.writeLog({
+            logWorker.write({
                 'time': timeConverter(getAllSeconds()).map(digit => digit === 'colon' ? ':' : digit).join(''), 
                 "task": argsTask, 
                 "success": flag, 

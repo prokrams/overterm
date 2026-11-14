@@ -10,11 +10,7 @@ import paths from './utils/paths.ts'
 if (positionals[0] === 'log') {
     output()
 } else if (values.config) {
-    console.log(`
-config here: ${paths.getConfig}
-logs here: ${paths.getLogs}
-        `)
-    process.stdout.write('\x07')
+    process.stdout.write(`config here: ${paths.getConfig}\nlogs here: ${paths.getLogs}`)
 } else if (values.version) {
     version()
 } else if (values.help) {

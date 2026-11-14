@@ -1,6 +1,9 @@
 import { horizontalPaddings } from '../../tools/horizontal-paddings.ts'
 import { argsTask } from '../../utils/args.ts'
 import font from '../../assets/font.ts'
+import configWorker from '../../config/config-worker.ts'
+
+const config = configWorker.get()
 
 export default function render(time: string[]) {
     let result: string[] = []
@@ -16,6 +19,7 @@ export default function render(time: string[]) {
         })
         result.push(rows.join(''))
     }
+    config.hint_in_timer && horizontalPaddings('space pause • enter end • q quit')
     horizontalPaddings(result)
     horizontalPaddings(argsTask)
 }
