@@ -18,6 +18,8 @@ added a check for the validity of number in **args**
 
 fixed bin path in package.json
 
+added config
+
 # v0.3.1
 
 refactoring the timer code to promises
