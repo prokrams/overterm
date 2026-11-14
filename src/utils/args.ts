@@ -1,19 +1,18 @@
 import { parseArgs } from 'node:util'
+import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
 
 export const { values, positionals } = parseArgs({
     allowPositionals: true,
     options: {
         help: {
-            type: 'boolean'
+            type: 'boolean',
+            short: 'h'
         },
         version: {
             type: 'boolean',
             short: 'v'
         },
         config: {
-            type: 'boolean'
-        },
-        log: {
             type: 'boolean'
         },
         seconds: {
@@ -28,7 +27,7 @@ export const { values, positionals } = parseArgs({
         },
         hours: {
             type: 'string',
-            short: 'h',
+            short: 'H',
             default: '0'
         },
         task: {
@@ -41,7 +40,13 @@ export const { values, positionals } = parseArgs({
 
 const { seconds, minutes, hours, task } = values
 
-export const argsSeconds = Number(seconds)
-export const argsMinutes = Number(minutes)
-export const argsHours = Number(hours)
+function validateNumber(arg: keyof typeof values, value: unknown) {
+    if (!Number.isNaN(Number(value))) return Number(value)
+    horizontalPaddings(`${arg} must be a number`)
+    process.exit(1)
+}
+
+export const argsSeconds = validateNumber('seconds', seconds)
+export const argsMinutes = validateNumber('minutes', minutes)
+export const argsHours = validateNumber('hours', hours)
 export const argsTask = task

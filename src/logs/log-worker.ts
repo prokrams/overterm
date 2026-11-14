@@ -1,12 +1,28 @@
 import fs from 'node:fs'
-import path from 'node:path'
 import type { Log } from './types.ts'
-import { fileURLToPath } from 'node:url'
+import paths from '../utils/paths.ts'
+import path from 'node:path'
 
-const filePath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../assets/logs.json')
+const filePath = paths.getLogs
+const dirFilePath = path.dirname(filePath)
+let validData: string
 
-const data = fs.readFileSync(filePath, 'utf-8')
-const parsedData = JSON.parse(data)
+function validateData() {
+    try {
+        validData = fs.readFileSync(filePath, 'utf-8')
+    } catch (err) {
+        if (typeof err === 'object' && err !== null && 'code' in err)
+        if (err.code === 'ENOENT') {
+            const emptyObj = {"logs": []}
+            fs.mkdirSync(dirFilePath, {recursive: true})
+            fs.writeFileSync(filePath, JSON.stringify(emptyObj, null, 2))
+            return validateData()
+        }
+    }
+    return validData
+}
+
+const parsedData = JSON.parse(validateData())
 
 export const logWorker = {
     writeLog: (obj: Log) => {

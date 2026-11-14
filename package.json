@@ -1,19 +1,19 @@
 {
-  "private": "true",
-  "name": "Overterm",
+  "private": true,
+  "name": "overterm",
   "version": "0.4.0",
   "description": "Terminal ASCII timer with tracking of completed work. Lightweight, ASCII, time.",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "overterm": "./dist/index.ts"
+    "overterm": "dist/index.ts"
   },
   "files": ["dist"],
   "engines": {"node": ">=20"},
   "keywords": ["timer", "cli", "countdown", "ascii"],
   "scripts": {
     "start": "node src/index.ts",
-    "build": "npx tsc -p tsconfig.build.json"
+    "build": "tsc -p tsconfig.build.json"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

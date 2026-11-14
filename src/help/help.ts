@@ -6,15 +6,15 @@ ${pkg.name} - ${pkg.description}
 
 usage: 
     overterm 
-        [-s | --seconds] number
-        [-m | --minutes] number
-        [-h | --hours] number
+        [-s | --seconds] number > 0
+        [-m | --minutes] number > 0
+        [-H | --hours] number > 0
         [-t | --task] string
         [-v | --version]
-        [--help]
+        [-h | --help]
+        [--config] 
 
-subcommands:
+subcommand:
     log         displays the last timers that had a task set
-    config      displays the location of the config
 `)
 }

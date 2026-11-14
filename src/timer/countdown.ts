@@ -1,6 +1,6 @@
 import { getAllMiliseconds, renderConvertionTime } from './render/convertion.ts'
-import question from './final/question.ts'
-import alarm from './final/alarm.ts'
+import question from './question.ts'
+import alarm from './alarm.ts'
 import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
 import terminalListener from './terminalListener.ts'
 

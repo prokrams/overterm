@@ -1,9 +1,9 @@
 import readline from 'node:readline'
-import { horizontalPaddings } from '../../tools/horizontal-paddings.ts'
-import { getAllSeconds, timeConverter } from '../render/convertion.ts'
-import { argsTask } from '../../utils/args.ts'
-import { logWorker } from '../../logs/log-worker.ts'
-import { localeDate } from '../../utils/date.ts'
+import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
+import { getAllSeconds, timeConverter } from './render/convertion.ts'
+import { argsTask } from '../utils/args.ts'
+import { logWorker } from '../logs/log-worker.ts'
+import { localeDate } from '../utils/date.ts'
 
 
 export default function question() {

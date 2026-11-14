@@ -3,7 +3,6 @@ import type { Log } from './types.ts'
 import { horizontalPaddings } from '../tools/horizontal-paddings.ts'
 import { logWorker } from './log-worker.ts'
 import close from '../utils/close.ts'
-import { log } from 'node:console'
 
 const logs = logWorker.getLogs()
 
@@ -12,7 +11,7 @@ function renderLog(array: Log[]) {
     horizontalPaddings('↑↓ navigate • ctrl+c quit')
     horizontalPaddings(`timers found ${logs.length}`)
     array.map(({ time, task, success, date }) => {
-        console.table(`\n ${time} \x1b[38;5;248m${date}\x1b[38;5;255m\n ${task}\n ${success ? '\x1b[38;5;10m' + success : '\x1b[38;5;9m' + success}\x1b[38;5;255m\n`)
+        console.log(`\n ${time} \x1b[38;5;248m${date}\x1b[38;5;255m\n ${task}\n ${success ? '\x1b[38;5;10m' + success : '\x1b[38;5;9m' + success}\x1b[38;5;255m\n`)
     })
 }
 
