@@ -18,7 +18,7 @@ added a check for the validity of number in **args**
 
 fixed bin path in package.json
 
-added config
+the config logic added: now located in the user folder
 
 # v0.3.1
 
