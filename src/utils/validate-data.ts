@@ -18,6 +18,8 @@ export default function validateData(filePath: string, templateObj: TemplateObj)
                 fs.writeFileSync(filePath, JSON.stringify(templateObj, null, 2))
                 return validateData(filePath, templateObj)
             }
+        console.error('[VALIDATE_DATE] ERROR:', err)
+        process.exit(1)
     }
 
     return validData as string

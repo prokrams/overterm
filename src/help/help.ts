@@ -6,9 +6,9 @@ ${pkg.name} - ${pkg.description}
 
 usage: 
     overterm 
-        [-s | --seconds] number > 0
-        [-m | --minutes] number > 0
-        [-H | --hours] number > 0
+        [-s | --seconds] number >= 0
+        [-m | --minutes] number >= 0
+        [-H | --hours] number >= 0
         [-t | --task] string
         [-v | --version]
         [-h | --help]

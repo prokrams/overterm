@@ -28,7 +28,7 @@ Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**
 
 [ ] Select timers from the most recently recorded timers
 
-[ ] Add config
+[X] Add config
 
 [X] Add pause
 

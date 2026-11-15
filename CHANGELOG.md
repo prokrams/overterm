@@ -22,6 +22,12 @@ the config logic added: now located in the user folder
 
 scope has been during import
 
+paths has been changed: previously they broke due to incomplete path 
+
+changed alarm: added platform check, changed call method say
+
+options added to config: bell, macos_bell_say
+
 # v0.3.1
 
 refactoring the timer code to promises

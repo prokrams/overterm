@@ -6,26 +6,21 @@ const appname = 'overterm'
 
 function getPaths(file: 'config' | 'logs') {
     let start: string | undefined
-    let userPath: string
     switch (process.platform) {
         case 'win32':
             if (file === 'config') {
-                start = process.env.APPDATA
-                userPath = 'Roaming'
+                start = process.env.APPDATA || path.join(homedir, 'AppData', 'Roaming')
             } else {
-                start = process.env.LOCALAPPDATA
-                userPath = 'Local'
+                start = process.env.LOCALAPPDATA || path.join(homedir, 'AppData', 'Local')
             }
-            return start || path.join(homedir, 'AppData', userPath, `${appname}`, `${file}.json`)
+            return path.join(start, `${appname}`, `${file}.json`)
         default:
             if (file === 'config') {
-                start = process.env.XDG_CONFIG_HOME
-                userPath = '.config'
+                start = process.env.XDG_CONFIG_HOME || path.join(homedir, '.config')
             } else {
-                start = process.env.XDG_DATA_HOME
-                userPath = '.local'
+                start = process.env.XDG_DATA_HOME || path.join(homedir, '.local', 'share')
             }
-        return start || path.join(homedir, userPath, userPath === '.local' ? 'share' : '', `${appname}`, `${file}.json`)
+        return path.join(start, `${appname}`, `${file}.json`)
     }
 }
 
