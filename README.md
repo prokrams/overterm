@@ -10,6 +10,8 @@
 
 Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**, **time**. This is a tiny terminal timer designed to track time spent on tasks. It does not specifically use any third-party libraries, and the architecture is designed to consume as little resources as possible. The timer is visualized using ascii art, with each digit rendered using a custom engine. Time does not depend on the interval, but is calculated exclusively from Date.now()
 
+https://github.com/user-attachments/assets/a1687ce0-29e0-4d28-9453-a86186ded0b3
+
 ## Getting started
 Installation is very simple, using the npm package manager.
 
