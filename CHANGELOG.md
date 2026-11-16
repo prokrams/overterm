@@ -28,6 +28,8 @@ changed alarm: added platform check, changed call method say
 
 options added to config: bell, macos_bell_say
 
+custom config are now merged with default config
+
 # v0.3.1
 
 refactoring the timer code to promises

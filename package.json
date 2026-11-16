@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "overterm",
   "version": "0.4.0",
   "description": "Terminal ASCII timer with tracking of completed work. Lightweight, ASCII, time.",

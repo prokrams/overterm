@@ -10,7 +10,7 @@ export type Config = {
     macos_bell_say_task: boolean
 }
 
-const default_config = {
+const defaultConfig = {
     hint_in_timer: true,
     hint_in_log: true,
     font_WIP: '',
@@ -23,9 +23,11 @@ let cacheConfig: Config | undefined
 
 function getFile() {
     const filePath = paths.getConfig
-    const data = validateData(filePath, default_config)
+    const data = validateData(filePath, defaultConfig)
     try {
-        return JSON.parse(data) as Config
+        const parsedConfig = JSON.parse(data) as Config
+        const mergedConfig = {...defaultConfig, ...parsedConfig}
+        return mergedConfig
     } catch (err) {
         if (err instanceof Error) console.error(`[PARSE_CONFIG] Config path: ${paths.getConfig}
 [PARSE_CONFIG] ERROR: ${err.message}`)
