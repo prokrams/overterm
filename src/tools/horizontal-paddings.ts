@@ -27,6 +27,7 @@ function checkType(text: string | string[]) {
 
 export function horizontalPaddings(text: string | string[]) {
     const refinedText = checkType(text)
+    let lines: string[] = []
     process.stdout.write('\n')
     refinedText.forEach(item => {
         const withText = columns - item.length
@@ -35,6 +36,7 @@ export function horizontalPaddings(text: string | string[]) {
             process.stdout.write(`${item}`)
             return
         }
-        process.stdout.write(`${' '.repeat(needColumns)}${item}${' '.repeat(needColumns)}\n`)
+        lines.push(`${' '.repeat(needColumns)}${item}${' '.repeat(needColumns)}\n`)
     })
+    process.stdout.write(lines.join(''))
 }

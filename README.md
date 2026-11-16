@@ -14,7 +14,7 @@ Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**
 Installation is very simple, using the npm package manager.
 
 ```
-npm install overterm
+npm install -g overterm
 ```
 
 Starting a timer for 10 seconds with a set task.
@@ -49,7 +49,7 @@ subcommand:
 
 - clone a repository
 - npm install
-- npm build
+- npm run build
 
 ## Roadmap
 
@@ -70,8 +70,9 @@ subcommand:
 [X] Add pause
 
 [ ] Fix flickering terminal
+    - Changing the rendering to frame-by-frame, everything is stitched together into a single frame and then transmitted to the terminal
 
-[ ] Write a README
+[X] Write a README
 
 ## Licence
 MIT

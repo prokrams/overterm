@@ -12,7 +12,6 @@ function startCountdown() {
 
     const done = new Promise<void>((resolve) => {
         const interval = setInterval(() => {
-            
             console.clear()
             const left = pause ? freeze : end - Date.now()
             renderConvertionTime(Math.ceil(left / 1000))

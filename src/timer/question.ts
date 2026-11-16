@@ -29,6 +29,7 @@ export default function question() {
                 "date": localeDate()
             })
             rl.close()
+            process.exit(0)
         })
     }
 }
