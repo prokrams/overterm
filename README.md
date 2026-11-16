@@ -8,11 +8,48 @@
                                     MMMMMMMMMM MMMMMMMMMMMM MMMMMMMMMMMM MMMMMMMMMMMMMM 
 ```  
 
-Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**, **time**. 
+Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**, **time**. This is a tiny terminal timer designed to track time spent on tasks. It does not specifically use any third-party libraries, and the architecture is designed to consume as little resources as possible. The timer is visualized using ascii art, with each digit rendered using a custom engine. Time does not depend on the interval, but is calculated exclusively from Date.now()
 
-## args
+## Getting started
+Installation is very simple, using the npm package manager.
 
-## dev
+```
+npm install overterm
+```
+
+Starting a timer for 10 seconds with a set task.
+```
+overterm -s 10 -t "hello world"
+```
+pause: **space** | end timer: **enter** | abort: **q**
+
+View past timers with set task.
+```
+overterm log
+```
+navigate: arrows **up/down** | abort: **q**
+
+## Arguments
+```
+usage: 
+    overterm 
+        [-s | --seconds] number >= 0
+        [-m | --minutes] number >= 0
+        [-H | --hours] number >= 0
+        [-t | --task] string
+        [-v | --version]
+        [-h | --help]
+        [--config] 
+
+subcommand:
+    log         displays the last timers that had a task set
+```
+
+## Development
+
+- clone a repository
+- npm install
+- npm build
 
 ## Roadmap
 
@@ -37,3 +74,4 @@ Terminal ASCII timer with tracking of completed work. **Lightweight**, **ASCII**
 [ ] Write a README
 
 ## Licence
+MIT
