@@ -10,10 +10,10 @@ export function getAllMiliseconds() {
 }
 
 export function timeConverter(seconds: number): string[] {
-    let result = []
+    const result = []
     let finalSeconds: number = seconds
     let finalMinutes: number = Math.floor(finalSeconds / 60)
-    let finalHours: number = Math.floor(finalMinutes / 60)
+    const finalHours: number = Math.floor(finalMinutes / 60)
     
     if (finalSeconds >= 60) {
         finalSeconds = finalSeconds % 60
@@ -25,13 +25,17 @@ export function timeConverter(seconds: number): string[] {
 
     if (finalHours) {
         const digits = finalHours.toString().split('')
-        digits.length === 1 && digits.unshift('0')
+        if (digits.length === 1) {
+            digits.unshift('0')
+        }
         result.push(digits)
         result.push('colon')
     }
     if (finalMinutes) {
         const digits = finalMinutes.toString().split('')
-        digits.length === 1 && digits.unshift('0')
+        if (digits.length === 1) {
+            digits.unshift('0')
+        }
         result.push(digits)
         result.push('colon')
     } else {
@@ -42,7 +46,9 @@ export function timeConverter(seconds: number): string[] {
         result.push('0', '0')
     } else {
         const digits = finalSeconds.toString().split('')
-        digits.length === 1 && digits.unshift('0')
+        if (digits.length === 1) {
+            digits.unshift('0')
+        }
         result.push(digits)
     }
 

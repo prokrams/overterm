@@ -15,7 +15,7 @@ export default function question() {
             output: process.stdout
         })
         rl.question(`Session success? (y/n): `, answer => {
-            let flag: boolean | undefined = undefined
+            let flag: boolean
             if (answer === 'y' || answer === 'yes') {
                 flag = true
             } else {

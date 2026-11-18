@@ -7,7 +7,9 @@ import logWorker from './log-worker.ts'
 
 function renderLog(array: Log[], logs: Log[], config: Config) {
     console.clear()
-    config.hint_in_log && horizontalPaddings('↑↓ navigate • q quit')
+    if (config.hint_in_log) {
+        horizontalPaddings('↑↓ navigate • q quit')
+    }
     horizontalPaddings(`timers found ${logs.length}`)
     array.map(({ time, task, success, date }) => {
         process.stdout.write(`\n ${time} \x1b[38;5;248m${date}\x1b[38;5;255m\n ${task}\n ${success ? '\x1b[38;5;10m' + success : '\x1b[38;5;9m' + success}\x1b[38;5;255m\n`)

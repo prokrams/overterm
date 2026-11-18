@@ -15,7 +15,7 @@ function splitString(text: string) {
     }
     const first = text.slice(0, middle)
     let seconds = text.slice(middle)
-    seconds[0] === ' ' ? seconds = seconds.trimStart() : seconds
+    seconds = seconds.trimStart()
 
     return [first, seconds]
 }
@@ -27,7 +27,7 @@ function checkType(text: string | string[]) {
 
 export function horizontalPaddings(text: string | string[]) {
     const refinedText = checkType(text)
-    let lines: string[] = []
+    const lines: string[] = []
     process.stdout.write('\n')
     refinedText.forEach(item => {
         const withText = columns - item.length

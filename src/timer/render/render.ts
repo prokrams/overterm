@@ -21,7 +21,9 @@ export default function render(time: string[]) {
         })
         result.push(rows.join(''))
     }
-    loadConfig().hint_in_timer && horizontalPaddings('space pause • enter end • q quit')
+    if (loadConfig().hint_in_timer) {
+        horizontalPaddings('space pause • enter end • q quit')
+    }
     horizontalPaddings(result)
     horizontalPaddings(argsTask)
 }
